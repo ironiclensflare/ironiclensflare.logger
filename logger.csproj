@@ -2,6 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>ironiclensflare.logger</PackageId>
+    <projectUrl>https://github.com/ironiclensflare/Logger</projectUrl>
+    <Version>1.0.1</Version>
+    <Authors>ironiclensflare</Authors>
   </PropertyGroup>
 
   <ItemGroup>

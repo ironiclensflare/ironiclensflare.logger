@@ -4,7 +4,7 @@ using log4net.Appender;
 using log4net.Layout;
 using log4net.Repository.Hierarchy;
 
-namespace logger
+namespace ironiclensflare.logger
 {
     public static class Logger
     {
