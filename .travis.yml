@@ -2,13 +2,9 @@ language: csharp
 mono: none
 dotnet: 2.1.300
 script:
-  - echo $SONAR_TOKEN
-  - echo ${SONAR_TOKEN}
   - dotnet restore
   - dotnet tool install --global dotnet-sonarscanner
   - export PATH="$PATH:/home/travis/.dotnet/tools"
   - dotnet sonarscanner begin /k:"ironiclensflare_Logger" /d:sonar.login=$SONAR_TOKEN /d:sonar.host.url="https://sonarcloud.io" /o:ironiclensflare
   - dotnet build
   - dotnet sonarscanner end /d:sonar.login=$SONAR_TOKEN
-env:
-  - secure: "adc16FUgVjkOAu6BRcSIPliceiZdWIR8xobam1pRbdN5iPZovv+Ii+gAGVnRYQBWbD/VuK3+zRRgC92Ah0LYZkAbFO/MsbjTYjSg7erHqJvCIZdL3xWJ7fbhptUbRTlQhzPhkicCQ+USJ7ZOJ7xtfMJDd6hes6jztafH805v+5iXK6Y5kjMqlTaX/Po4RSNkV9btngjFOiXjPtn5NlFuB8vlX4Vw6Pw7k+cfd8QyZ1sHIeF7U8z0LTrxSMKE9pkFnvEzEZoR2w8N11Hcw0Qwf9g4aVEeND2F+fRJcNkLc2S26Cwj2eZCraRRiJL2BIMxQCa8YfpkUAjpJWRju2NPFQjEjQYiokDd3+fKZ3NsnSj6swEB24MpWiqlnoSvlh6Z6v4I9pkkvdPhqQiWDCArXZxq9NZEAgl+woR7Db5JtZs2YGFzADyB380oyInp9nV4qyXJgEiqzGQcxVRkH5rWR3O01GaaTo+g86ZfqnvRHdhitVJYPIVyNI98q9s9I8zA4Z51/4IczoilelACCEtJovEL3kqtYNDnLyzc4WR0s1FCgBOZgb4b/QtFto+nGiBaotx+uFR56mL8A+3xD0SQQK8qtf7Q26uw9mURORenNAvqHoROEGOtOf3E2l5zcFz1+K4GNocN4k5U9sQWze8iFT4d1yKuDPc0BX44a4+iH4I="
