@@ -3,10 +3,14 @@ mono: none
 dotnet: 2.1.300
 script:
   - dotnet restore
-  - sonar-scanner
+  - dotnet tool install --global dotnet-sonarscanner
+  - dotnet sonarscanner begin /k:"ironiclensflare_Logger" /d:sonar.login=${SONAR_TOKEN} /d:sonar.host.url="https://sonarcloud.io"
   - dotnet build
+  - dotnet sonarscanner end
 addons:
   sonarcloud:
     organization: "ironiclensflare"
     token:
       secure: "g8n4SJRytCXt3dyA7CZZJIeDTbcsnUmtdtOJcYn+LTh1ZzDXydY0JUvPnBPBX/kP/9JlBX/wLShDWeW84CwJtFITiNWHXgLYdr/d54BtwT7RZVCz5XaguHRhPKOhYPtuBLNNFsl7t301SJd2yBKmJ3+Rm8sR+5KalESVwmMceBUEupNZcdE1jgXxU6FBLqEvGlcXBvWO3bq+kExyCVX5iqI57GGXPxAEhh4EzV7DHsSjK6aLZXzJv3rYsWqp8QVSIzCDSwVlMPM4emwFnMNguG2VYBh7WM+HWMlDLiwoC7CvffJrXnW1BkCOA0LSv0if+YJpEZ2V36BMGa3uS9NwxlIApI3hx4smPWD96zqzYsjK6xwmAnZ+XNHUB/Yom0WH2ebj7J7hPpDy6+EjH2nvP1FeiF57XvyA/oyF/99tHShYK2iIYy49Q9M5Nk7mUfESJuv9BpctJ+uK5li1wOOXV+eHbv2uCE0Ng7Z54k1lehiGC/BFB1G97WFygACd8v9l13PkzMcIOU77p8U/ETrE4Y1NjP9H3axeMAuEc+XUU+Cgg72OKpn2leD5Kqjv6FEVi58YmS/bSGE4NqCoT9QcHiMGIsxMetR+ewa+9QyK2JdyqDF2inqwdNI52sww6iweer7wNzEtSjRYHggbEp4UepXPca0YlzXqLO/MT67YshQ="
+env:
+  - secure: "cIoZxRm6EM+ofTwFXmPoSFGkz1nnKmPE+oVp00JhLd5C1eS7xZLoX355UojjutLCD6WqScnQm+h5gdTHYoDJezAtQ5MG7RRYFQkZBCw043dw9viX7KAU3KfiZCXt7+0Lwf5a+wobwu83AWSEvaK6K7HRDHqRc0ujlW5eS/OoM04XeIwVeRzcrRufbjfPApabc7372sdRzYWn/CxQdhK2l6cZ66Vh4jePMcCWvAodvWC6a3dk/1w1aVUla4DD4vRidFLkX+R0K7PpKOeoMPuCQojtbl09gHMWJLT9P7wp0X5H94Xaa0R+qwU4acr/YIIQJm9cllEhNGkH4FxA40UVky1Ept75cabSNk35/+tfn+4DgtK5jsbW258D14fvvGiPG6RpYOjSpYzRRg5s3Mg7PC888jxM1XyWvmU3kYbtw3xUMSPvPHrroOjNq3iUybnxwpC5WSkHImZi7qDB2uFOub2pvFK0fIj3Z8+XVMXpgIBS8oW6X95mMCiHGm6NpERp/Ldqc6Ducauywy50MqVr+I3Hp0mkO6dTv4cFoqXJ7PhPRkkM5BD0gsBBps9W/CZv9eXtvj2ud5XR/SW71kFHwH4pTu29q2JzeE0b1gN6f6ZzC9yn2BZ0pmb7EV90lDEI6C2aNuuHpTBO9PgFRIbjiw5S2+lzLk4CUQKNH9/4feA="
