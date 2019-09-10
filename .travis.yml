@@ -8,3 +8,4 @@ script:
   - dotnet sonarscanner begin /k:"ironiclensflare_Logger" /d:sonar.login=$SONAR_TOKEN /d:sonar.host.url="https://sonarcloud.io" /o:ironiclensflare
   - dotnet build
   - dotnet sonarscanner end /d:sonar.login=$SONAR_TOKEN
+
