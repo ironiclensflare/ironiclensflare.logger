@@ -2,10 +2,12 @@ language: csharp
 mono: none
 dotnet: 2.1.300
 script:
+  - echo $SONAR_TOKEN
+  - echo ${SONAR_TOKEN}
   - dotnet restore
   - dotnet tool install --global dotnet-sonarscanner
   - export PATH="$PATH:/home/travis/.dotnet/tools"
-  - dotnet sonarscanner begin /k:"ironiclensflare_Logger" /d:sonar.login=${SONAR_TOKEN} /d:sonar.host.url="https://sonarcloud.io" /o:ironiclensflare
+  - dotnet sonarscanner begin /k:"ironiclensflare_Logger" /d:sonar.login=$SONAR_TOKEN /d:sonar.host.url="https://sonarcloud.io" /o:ironiclensflare
   - dotnet build
   - dotnet sonarscanner end /d:sonar.login=$SONAR_TOKEN
 env:
