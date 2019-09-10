@@ -13,5 +13,6 @@
 
 # VSCode stuff
 .vscode/
+.sonarqube/
 
 # End of https://www.gitignore.io/api/dotnetcore
