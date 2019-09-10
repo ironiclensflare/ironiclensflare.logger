@@ -3,6 +3,7 @@ mono: none
 dotnet: 2.1.300
 script:
   - dotnet restore
+  - sonar-scanner
   - dotnet build
 addons:
   sonarcloud:
