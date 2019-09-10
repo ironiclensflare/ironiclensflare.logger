@@ -1,11 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
+  
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>ironiclensflare.logger</PackageId>
     <projectUrl>https://github.com/ironiclensflare/Logger</projectUrl>
     <Version>1.0.1</Version>
     <Authors>ironiclensflare</Authors>
+    <ProjectGuid>{8dde29fc-e1c5-48a1-8feb-3867cb975f82}</ProjectGuid>
   </PropertyGroup>
 
   <ItemGroup>
